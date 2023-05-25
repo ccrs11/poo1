@@ -1,4 +1,4 @@
-# **POO person**
+# **POO Exercises**
 
 ```
 ____ _______ _______ _______ _______ _______ 
@@ -12,4 +12,18 @@ Programmer: [Cristian Camilo Rojas Sepúlveda]
 Description: [This is a webpage used to learn POO]
 ```
 
-The form features a submit button that, when clicked, delivers a warm greeting to the person indicated in the form.
+## Exercise 1 : Class=Person
+
+### Commit # 5.           [feat: ![sparkles](https://github.githubassets.com/images/icons/emoji/unicode/2728.png) fucntionality finished](https://github.com/ccrs11/poo1/commit/4f0482d1dd75972c18e8ae63e29f2bb2b656468f)            
+
+​     (https://github.com/ccrs11/poo1/commit/4f0482d1dd75972c18e8ae63e29f2bb2b656468f)
+
+The form features a submit button that, when clicked, delivers a warm greeting to the person indicated in the form. Additionally a subclass named estudiante can be selected and execute some methods.
+
+## Exercise 2: Class=Animal
+
+### Commit # 7.           [ccrs11](https://github.com/ccrs11/poo1/commits?author=ccrs11)                         [feat: ![sparkles](https://github.githubassets.com/images/icons/emoji/unicode/2728.png) was added the animal exercise.](https://github.com/ccrs11/poo1/commit/09e77d3b97bfbd09c22b467a149effa064f7b38c)            
+
+   (https://github.com/ccrs11/poo1/commit/09e77d3b97bfbd09c22b467a149effa064f7b38c)
+
+The form features a submit button that, when clicked, shows different information as text.
