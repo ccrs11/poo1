@@ -69,7 +69,7 @@ button[type="submit"]:hover {
 }
 
 .card {
-    display:flex;
+    display:none;
     justify-content: center;
     align-items:center;
     border-radius: 8px;
