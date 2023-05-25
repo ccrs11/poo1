@@ -9,23 +9,34 @@
 </head>
 <body>
     <div class="container">
-        <form class="form">
+        <form id="myForm" class="form">
             <div>
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name">
             </div>
             <div>
                 <label for="edad">Edad</label>
-                <input type="text" name="edad" id="edad">
+                <input type="number" name="edad" id="edad">
             </div>
             <div>
                 <label for="sexo">Sexo</label>
-                <input type="text" name="sexo" id="sexo">
+                <select id="sexo" name="sexo">
+                    <option value="M" selected>Hombre</option>
+                    <option value="F">Mujer</option>
+                </select>
             </div>
             <div>
                 <button type="submit">Enviar Info</button>
             </div>
         </form>
     </div>
+    <div class="card">
+        <div class="alert">
+            <strong>Alert!</strong> This is an important message.
+        </div>
+    </div>
+
+
+    <script src="./main.js"></script>
 </body>
 </html>
