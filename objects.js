@@ -28,6 +28,32 @@ export class Persona{
     saludar(){
         //escribir dentro de la tarjeta el nombre
         let inner = document.querySelector(".alert");
-        inner.innerHTML=`<strong>Hola ${this._nombre} </strong>`;
+        inner.insertAdjacentHTML("beforeend", `<strong>Hola ${this._nombre} </strong><br>`);
+    }
+    static esMayorDeEdad(edad){
+        let inner = document.querySelector(".alert");
+        if(edad >= 18){
+            inner.insertAdjacentHTML("beforeend", `<strong>Es mayor de edad</strong><br>`);
+        }else{
+            inner.insertAdjacentHTML("beforeend", `<strong>Es menor de edad</strong><br>`);
+        }
+    }
+}
+
+export class Estudiante extends Persona{
+    _carrera
+    constructor(nombre,edad,sexo,carrera){
+        super(nombre,edad,sexo)
+        this._carrera=carrera;
+    }
+    set carrera(carrera){
+        this._carrera=carrera;
+    }
+    get carrera(){
+        return this._carrera;
+    }
+    estudiar(){
+        let inner = document.querySelector(".alert");
+        inner.insertAdjacentHTML("beforeend", `<strong> estudias ${this._carrera} =O </strong><br>`);
     }
 }
