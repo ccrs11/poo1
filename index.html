@@ -4,50 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form to greet a person</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>POO Animal</title>
 </head>
 <body>
-    <div>
-        <div>
-            <label for="rol">Seleccionar Rol</label>
-            <select id="rol" name="rol">
-                <option value="option" selected> escoger una opcion </option>
-                <option value="persona">Persona natural</option>
-                <option value="estudiante">Estudiante</option>
-            </select>
-        </div>
-    </div>
-    <div class="container">
-        <form id="myForm" class="form">
+    <div class="grid-container">
+        <div class="grid_rol">
             <div>
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div>
-                <label for="edad">Edad</label>
-                <input type="number" name="edad" id="edad">
-            </div>
-            <div>
-                <label for="sexo">Sexo</label>
-                <select id="sexo" name="sexo">
-                    <option value="M" selected>Masculino</option>
-                    <option value="F">Femenino</option>
+                <label for="rol">Seleccionar Rol</label>
+                <select id="rol" name="rol">
+                    <option value="option" selected> escoger una opcion </option>
+                    <option value="animal">Animal a secas</option>
+                    <option value="perro">Perro</option>
                 </select>
             </div>
-            <div id="carreraField">
-
+        </div>
+        <div class="grid_image">
+        </div>
+        <div class="grid_form">
+            <div class="container">
+                <form id="myForm" class="form">
+                    <div id="nameFor">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" id="edad">
+                    </div>
+                    <div id="razaField">
+        
+                    </div>
+                    <div>
+                        <button type="submit">Enviar Info</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <button type="submit">Enviar Info</button>
+        </div>
+        <div class="grid_message">
+            <div class="card">
+                <div class="alert">
+                    
+                </div>
             </div>
-        </form>
-    </div>
-    <div class="card">
-        <div class="alert">
-            
+        
         </div>
     </div>
+
 
 
     <script src="./main.js" type="module"></script>

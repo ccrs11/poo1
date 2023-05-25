@@ -1,59 +1,42 @@
-export class Persona{
-    _nombre;
-    _edad;
-    #sexo;
-    constructor(nombre,edad,sexo){
+export class Animal{
+    _nombre
+    _edad
+    constructor(nombre,edad){
         this._nombre=nombre;
         this._edad=edad;
-        this.#sexo=sexo;
     }
-    set nombre(nombre){
-        this._nombre=nombre;
-    }
-    get nombre(){
-        return this._nombre;
-    }
-    set edad(edad){
-        this._edad=edad;
-    }
-    get edad(){
-        return this._edad;
-    }
-    set sexo(sexo){
-        this.#sexo=sexo;
-    }
-    get sexo(){
-        return this.#sexo;
-    }
-    saludar(){
-        //escribir dentro de la tarjeta el nombre
+    hacerSonido(){
         let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong>Hola ${this._nombre} </strong><br>`);
-    }
-    static esMayorDeEdad(edad){
-        let inner = document.querySelector(".alert");
-        if(edad >= 18){
-            inner.insertAdjacentHTML("beforeend", `<strong>Es mayor de edad</strong><br>`);
-        }else{
-            inner.insertAdjacentHTML("beforeend", `<strong>Es menor de edad</strong><br>`);
+        if(this._nombre==='perro'){
+            inner.insertAdjacentHTML("beforeend", `<strong>bark bark</strong><br>`);
+        }
+        else if(this._nombre==='gato'){
+            inner.insertAdjacentHTML("beforeend", `<strong>miau miau</strong><br>`);
+        }
+        else if(this._nombre==='raton'){
+            inner.insertAdjacentHTML("beforeend", `<strong>raz raz raz</strong><br>`);
+        }
+        else if(this._nombre==='ballena'){
+            inner.insertAdjacentHTML("beforeend", `<strong>walleeee</strong><br>`);
+        }
+        else if(this._nombre==='vaca'){
+            inner.insertAdjacentHTML("beforeend", `<strong>muuuu</strong><br>`);
+        }
+        else if(this._nombre==='pollo'){
+            inner.insertAdjacentHTML("beforeend", `<strong>pio pio pio</strong><br>`);
         }
     }
 }
 
-export class Estudiante extends Persona{
-    _carrera
-    constructor(nombre,edad,sexo,carrera){
-        super(nombre,edad,sexo)
-        this._carrera=carrera;
+export class Perro extends Animal{
+    _raza
+    constructor(nombre,edad,raza){
+        super(nombre,edad);
+        this._raza=raza;
     }
-    set carrera(carrera){
-        this._carrera=carrera;
-    }
-    get carrera(){
-        return this._carrera;
-    }
-    estudiar(){
+    moverCola(){
         let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong> estudias ${this._carrera} =O </strong><br>`);
+        inner.insertAdjacentHTML("beforeend", `<strong>${this._nombre} es un perro ${this._raza} y mueve la cola</strong><br>`);
     }
 }
+
