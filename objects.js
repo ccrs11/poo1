@@ -1,42 +1,64 @@
-export class Animal{
-    _nombre
-    _edad
-    constructor(nombre,edad){
-        this._nombre=nombre;
-        this._edad=edad;
+export class Figura{
+    _color
+    constructor(color){
+        this._color=color;
     }
-    hacerSonido(){
-        let inner = document.querySelector(".alert");
-        if(this._nombre==='perro'){
-            inner.insertAdjacentHTML("beforeend", `<strong>bark bark</strong><br>`);
-        }
-        else if(this._nombre==='gato'){
-            inner.insertAdjacentHTML("beforeend", `<strong>miau miau</strong><br>`);
-        }
-        else if(this._nombre==='raton'){
-            inner.insertAdjacentHTML("beforeend", `<strong>raz raz raz</strong><br>`);
-        }
-        else if(this._nombre==='ballena'){
-            inner.insertAdjacentHTML("beforeend", `<strong>walleeee</strong><br>`);
-        }
-        else if(this._nombre==='vaca'){
-            inner.insertAdjacentHTML("beforeend", `<strong>muuuu</strong><br>`);
-        }
-        else if(this._nombre==='pollo'){
-            inner.insertAdjacentHTML("beforeend", `<strong>pio pio pio</strong><br>`);
-        }
+    set setColor(color){
+        this._color=color;
+    }
+    get getColor(){
+        return this._color;
+    }
+    calcularArea(){
+    //imprimir en html
+    let inner = document.querySelector(".alert");
+    inner.insertAdjacentHTML("beforeend", `<strong>La figura es de color ${this._color}</strong>`);
+    }
+}
+export class Circulo extends Figura{
+    _radio
+    constructor(color,radio){
+        super(color)
+        this._radio=radio;
+    }
+    set setRadio(radio){
+        this._radio=radio;
+    }
+    get getRadio(){
+        return this._radio;
+    }
+    calcularArea(){
+    let area=Math.PI*(this._radio*this._radio);
+    //imprimir en html
+    let inner = document.querySelector(".alert");
+        inner.insertAdjacentHTML("beforeend", `<strong>El área del círculo es de ${area}</strong>`);
     }
 }
 
-export class Perro extends Animal{
-    _raza
-    constructor(nombre,edad,raza){
-        super(nombre,edad);
-        this._raza=raza;
+export class Rectangulo extends Figura{
+    _largo
+    _ancho
+    constructor(color,largo,ancho){
+        super(color)
+        this._largo=largo;
+        this._ancho=ancho
     }
-    moverCola(){
-        let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong>${this._nombre} es un perro ${this._raza} y mueve la cola</strong><br>`);
+    set setLargo(largo){
+        this._largo=largo;
+    }
+    get getLargo(){
+        return this._largo;
+    }
+    set setAncho(ancho){
+        this._ancho=ancho;
+    }
+    get getAncho(){
+        return this._ancho;
+    }
+    calcularArea(){
+    let area=this._largo*this._ancho
+    //imprimir en HTML
+    let inner = document.querySelector(".alert");
+        inner.insertAdjacentHTML("beforeend", `<strong>El área del rectángulo es de ${area}</strong>`);
     }
 }
-
