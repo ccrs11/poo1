@@ -1,64 +1,59 @@
-export class Figura{
-    _color
-    constructor(color){
-        this._color=color;
+export class Vehiculo{
+    _marca
+    _modelo
+    _velocidad
+    constructor(marca, modelo, velocidad){
+        this._marca=marca;
+        this._modelo=modelo;
+        this._velocidad=velocidad;
     }
-    set setColor(color){
-        this._color=color;
+    set setMarca(marca){
+        this._marca=marca;
     }
-    get getColor(){
-        return this._color;
+    get getMarca(){
+        return this._marca;
     }
-    calcularArea(){
-    //imprimir en html
-    let inner = document.querySelector(".alert");
-    inner.insertAdjacentHTML("beforeend", `<strong>La figura es de color ${this._color}</strong>`);
+    set setModelo(modelo){
+        this._modelo=modelo;
+    }
+    get getModelo(){
+        return this._modelo;
+    }
+    
+    set setVelocidad(velocidad){
+        this._velocidad=velocidad;
+    }
+    get getVelocidad(){
+        return this._velocidad;
+    }
+    acelerar(){
+        let velocidadActual = parseInt(this._velocidad) +10;
+        //imprimir en html
+        let inner = document.querySelector(".alert");
+        inner.insertAdjacentHTML("beforeend", `<strong>La velocidad después de acelerar el vehículo es de: ${velocidadActual}</strong><br>`);
+    }
+    static convertirKmHEnMph(velocidad){
+        let inner = document.querySelector(".alert");
+        let velocidadConvert=velocidad/1.60934;
+        inner.insertAdjacentHTML("beforeend", `<strong>La velocidad en millas/s es ${velocidadConvert}</strong>`)
     }
 }
-export class Circulo extends Figura{
-    _radio
-    constructor(color,radio){
-        super(color)
-        this._radio=radio;
+export class Coche extends Vehiculo{
+    _combustible
+    constructor(marca, modelo, velocidad,combustible){
+        super(marca,modelo,velocidad)
+        this._combustible=combustible;
     }
-    set setRadio(radio){
-        this._radio=radio;
+    set setCombustible(combustible){
+        this._combustible=combustible;
     }
-    get getRadio(){
-        return this._radio;
+    get getCombustible(){
+        return this._combustible;
     }
-    calcularArea(){
-    let area=Math.PI*(this._radio*this._radio);
-    //imprimir en html
-    let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong>El área del círculo es de ${area}</strong>`);
-    }
-}
-
-export class Rectangulo extends Figura{
-    _largo
-    _ancho
-    constructor(color,largo,ancho){
-        super(color)
-        this._largo=largo;
-        this._ancho=ancho
-    }
-    set setLargo(largo){
-        this._largo=largo;
-    }
-    get getLargo(){
-        return this._largo;
-    }
-    set setAncho(ancho){
-        this._ancho=ancho;
-    }
-    get getAncho(){
-        return this._ancho;
-    }
-    calcularArea(){
-    let area=this._largo*this._ancho
-    //imprimir en HTML
-    let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong>El área del rectángulo es de ${area}</strong>`);
+    acelerar(){
+        let velocidadActual = parseInt(this._velocidad) +20;
+        //imprimir en html
+        let inner = document.querySelector(".alert");
+        inner.insertAdjacentHTML("beforeend", `<strong>La velocidad después de acelerar el coche es de: ${velocidadActual}</strong>`);
     }
 }

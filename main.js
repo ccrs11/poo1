@@ -1,4 +1,4 @@
-import { Figura, Circulo, Rectangulo } from "./objects.js";
+import { Vehiculo,Coche } from "./objects.js";
 const formPerson = document.getElementById("myForm");
 const card = document.querySelector(".card");
 
@@ -8,20 +8,12 @@ buttonRol.addEventListener("change", (event)=>{
     card.innerHTML=`<div class="alert"></div>`;
     card.style.display = "none"
     const divOneField=document.getElementById("oneField");
-    const divTwoField=document.getElementById("twoField");
-    if(buttonRol.value==='circulo'){
-        divOneField.innerHTML=`<label for="radio">Ingrese el radio</label>
-        <input type="text" name="radio" id="radio">`;
-        divTwoField.innerHTML=``;
-    }else if(buttonRol.value==='rectangulo'){
-        divOneField.innerHTML=`<label for="largo">Ingrese el largo</label>
-        <input type="text" name="largo" id="largo">`;
-        divTwoField.innerHTML=`<label for="ancho">Ingrese el ancho</label>
-        <input type="text" name="ancho" id="ancho">`;
+    if(buttonRol.value==='coche'){
+        divOneField.innerHTML=`<label for="combustible">Se agregó combustible?</label>
+        <input type="checkbox" name="acceptRules" class="inline checkbox" id="checkbox1" value="false">`;
     }
     else{
         divOneField.innerHTML=``;
-        divTwoField.innerHTML=``;
     }
 });
 
@@ -35,19 +27,15 @@ formPerson.addEventListener("submit", function(event) {
         data.push(value);
     }
     card.innerHTML=`<div class="alert"></div>`
-    if(buttonRol.value==='figura'){
-        const figura1 = new Figura(...data);
-        figura1.calcularArea();
+    if(buttonRol.value==='vehiculo'){
+        const vehiculo1 = new Vehiculo(...data);
+        vehiculo1.acelerar();
+        Vehiculo.convertirKmHEnMph(vehiculo1.getVelocidad);
         card.style.display = "flex";
     }
-    else if(buttonRol.value==='circulo'){
-        const circulo1 = new Circulo(...data);
-        circulo1.calcularArea();
-        card.style.display = "flex";
-    }
-    else if(buttonRol.value==='rectangulo'){
-        const rectangulo1 = new Rectangulo(...data);
-        rectangulo1.calcularArea();
+    else if(buttonRol.value==='coche'){
+        const coche1 = new Coche(...data);
+        coche1.acelerar();
         card.style.display = "flex";
     }
     else{

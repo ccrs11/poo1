@@ -35,3 +35,9 @@ The form features a submit button that, when clicked, shows different informatio
 ​    (https://github.com/ccrs11/poo1/commit/1964e5d702be341930a785644a1271dc393acc42)
 
 The form features a submit button that, when clicked, shows different information about class as text.
+
+## Exercise 3: Class=Figures
+
+### Commit # 11.     
+
+The form features a submit button that, when clicked, shows different information about class as text.
