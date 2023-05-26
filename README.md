@@ -27,3 +27,11 @@ The form features a submit button that, when clicked, delivers a warm greeting t
    (https://github.com/ccrs11/poo1/commit/09e77d3b97bfbd09c22b467a149effa064f7b38c)
 
 The form features a submit button that, when clicked, shows different information as text.
+
+## Exercise 3: Class=Figures
+
+### Commit # 9.           [ccrs11](https://github.com/ccrs11/poo1/commits?author=ccrs11)                         [feat: ✨ Figures exercise was added](https://github.com/ccrs11/poo1/commit/1964e5d702be341930a785644a1271dc393acc42)            
+
+​    (https://github.com/ccrs11/poo1/commit/1964e5d702be341930a785644a1271dc393acc42)
+
+The form features a submit button that, when clicked, shows different information about class as text.
