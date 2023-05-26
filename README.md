@@ -38,6 +38,8 @@ The form features a submit button that, when clicked, shows different informatio
 
 ## Exercise 3: Class=Figures
 
-### Commit # 11.     
+### Commit # 11.               [ccrs11](https://github.com/ccrs11/poo1/commits?author=ccrs11)                         [feat: ✨ Cars exercise was added](https://github.com/ccrs11/poo1/commit/a989c7e35b70cb70647d55789f4a0312d7bf013a)            
+
+​     (https://github.com/ccrs11/poo1/commit/a989c7e35b70cb70647d55789f4a0312d7bf013a)
 
 The form features a submit button that, when clicked, shows different information about class as text.
