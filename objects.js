@@ -1,59 +1,61 @@
-export class Vehiculo{
-    _marca
-    _modelo
-    _velocidad
-    constructor(marca, modelo, velocidad){
-        this._marca=marca;
-        this._modelo=modelo;
-        this._velocidad=velocidad;
+export class Empleado{
+    static countEmpleado = 0;
+    _nombre
+    _edad
+    _sueldo
+    constructor(nombre, edad, sueldo){
+        this._nombre=nombre;
+        this._edad=edad;
+        this._sueldo=sueldo;
+        ++Empleado.countEmpleado;
     }
-    set setMarca(marca){
-        this._marca=marca;
+    set setNombre(nombre){
+        this._nombre=nombre;
     }
-    get getMarca(){
-        return this._marca;
+    get getNombre(){
+        return this._nombre;
     }
-    set setModelo(modelo){
-        this._modelo=modelo;
+    set setEdad(edad){
+        this._edad=edad;
     }
-    get getModelo(){
-        return this._modelo;
+    get getEdad(){
+        return this._edad;
     }
     
-    set setVelocidad(velocidad){
-        this._velocidad=velocidad;
+    set setSueldo(sueldo){
+        this._sueldo=sueldo;
     }
-    get getVelocidad(){
-        return this._velocidad;
+    get getSueldo(){
+        return this._sueldo;
     }
-    acelerar(){
-        let velocidadActual = parseInt(this._velocidad) +10;
+    calcularSalarioAnual(){
+        let sueldoAnual = this._sueldo*12;
         //imprimir en html
         let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong>La velocidad después de acelerar el vehículo es de: ${velocidadActual}</strong><br>`);
+        inner.insertAdjacentHTML("beforeend", `<strong>El sueldo anual es de: ${sueldoAnual}</strong><br>`);
     }
-    static convertirKmHEnMph(velocidad){
+    static generarIdEmpleado(){
         let inner = document.querySelector(".alert");
-        let velocidadConvert=velocidad/1.60934;
-        inner.insertAdjacentHTML("beforeend", `<strong>La velocidad en millas/s es ${velocidadConvert}</strong>`)
+        let idEmpleado=Empleado.countEmpleado;
+        inner.insertAdjacentHTML("beforeend", `<strong>el Id del empleado es ${idEmpleado}</strong>`)
     }
 }
-export class Coche extends Vehiculo{
-    _combustible
-    constructor(marca, modelo, velocidad,combustible){
-        super(marca,modelo,velocidad)
-        this._combustible=combustible;
+export class Gerente extends Empleado{
+    _departamento
+    constructor(nombre, edad, sueldo,departamento){
+        super(nombre,edad,sueldo)
+        this._departamento=departamento;
     }
-    set setCombustible(combustible){
-        this._combustible=combustible;
+    set setDepartamento(departamento){
+        this._departamento=departamento;
     }
-    get getCombustible(){
-        return this._combustible;
+    get getDepartamento(){
+        return this._departamento;
     }
-    acelerar(){
-        let velocidadActual = parseInt(this._velocidad) +20;
+    calcularSalarioAnual(){
+        let sueldoAnual = (parseInt(this._sueldo)+parseInt((this._sueldo*0.1)))*12;
         //imprimir en html
         let inner = document.querySelector(".alert");
-        inner.insertAdjacentHTML("beforeend", `<strong>La velocidad después de acelerar el coche es de: ${velocidadActual}</strong>`);
+        inner.insertAdjacentHTML("beforeend", `<strong>El sueldo anual del gerente es de: ${sueldoAnual}</strong><br>`);
     }
 }

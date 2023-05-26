@@ -1,4 +1,4 @@
-import { Vehiculo,Coche } from "./objects.js";
+import { Empleado,Gerente } from "./objects.js";
 const formPerson = document.getElementById("myForm");
 const card = document.querySelector(".card");
 
@@ -8,9 +8,9 @@ buttonRol.addEventListener("change", (event)=>{
     card.innerHTML=`<div class="alert"></div>`;
     card.style.display = "none"
     const divOneField=document.getElementById("oneField");
-    if(buttonRol.value==='coche'){
-        divOneField.innerHTML=`<label for="combustible">Se agregó combustible?</label>
-        <input type="checkbox" name="acceptRules" class="inline checkbox" id="checkbox1" value="false">`;
+    if(buttonRol.value==='gerente'){
+        divOneField.innerHTML=`<label for="departamento">colocar departamento</label>
+        <input type="text" name="departamento" id="departamento">`;
     }
     else{
         divOneField.innerHTML=``;
@@ -27,15 +27,15 @@ formPerson.addEventListener("submit", function(event) {
         data.push(value);
     }
     card.innerHTML=`<div class="alert"></div>`
-    if(buttonRol.value==='vehiculo'){
-        const vehiculo1 = new Vehiculo(...data);
-        vehiculo1.acelerar();
-        Vehiculo.convertirKmHEnMph(vehiculo1.getVelocidad);
+    if(buttonRol.value==='empleado'){
+        const empleado1 = new Empleado(...data);
+        empleado1.calcularSalarioAnual();
+        Empleado.generarIdEmpleado();
         card.style.display = "flex";
     }
-    else if(buttonRol.value==='coche'){
-        const coche1 = new Coche(...data);
-        coche1.acelerar();
+    else if(buttonRol.value==='gerente'){
+        const gerente1 = new Gerente(...data);
+        gerente1.calcularSalarioAnual();
         card.style.display = "flex";
     }
     else{
